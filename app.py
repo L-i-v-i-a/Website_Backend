@@ -19,4 +19,4 @@ app.register_blueprint(contact_bp, url_prefix='/contact')
 app.register_blueprint(departments_bp, url_prefix='/departments')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0', port=5000)
