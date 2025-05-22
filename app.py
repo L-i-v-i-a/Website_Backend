@@ -14,7 +14,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return "Welcome to the AI Event Planning Assistant Backend"
+    return "Welcome to the Faculty Website Backend"
 
 app.register_blueprint(about_bp, url_prefix='/about')
 app.register_blueprint(news_bp, url_prefix='/news')
