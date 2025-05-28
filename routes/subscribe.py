@@ -10,7 +10,7 @@ from dotenv import load_dotenv
 # Load environment variables
 load_dotenv()
 
-subscribe_bp = Blueprint('subscribe-now', __name__)
+subscribe_bp = Blueprint('/subscribe-now', __name__)
 
 # MongoDB setup
 MONGO_URI = os.getenv("MONGO_URI", "mongodb://localhost:27017/")
