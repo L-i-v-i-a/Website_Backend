@@ -10,7 +10,7 @@ from dotenv import load_dotenv
 # Load environment variables
 load_dotenv()
 
-subscribe_bp = Blueprint('/subscribe-now', __name__)
+subscribe_bp = Blueprint('/subscribe', __name__)
 
 # MongoDB setup
 MONGO_URI = os.getenv("MONGO_URI", "mongodb://localhost:27017/")
@@ -24,7 +24,7 @@ EMAIL_PASSWORD = os.getenv("EMAIL_PASSWORD")
 EMAIL_RECEIVER = os.getenv("EMAIL_RECEIVER")
 
 
-@subscribe_bp.route('/subscribe', methods=['POST'])
+@subscribe_bp.route('/subscribe-now', methods=['POST'])
 def subscribe():
     data = request.get_json()
     email = data.get('email')
