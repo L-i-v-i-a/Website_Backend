@@ -1,5 +1,6 @@
 from flask import Flask
 from flask_mail import Mail
+from flask_cors import CORS
 from routes.about import about_bp
 from routes.news import news_bp
 from routes.contact import contact_bp
@@ -13,10 +14,14 @@ load_dotenv()
 
 app = Flask(__name__)
 
+# Enable CORS for all routes and origins
+CORS(app)
+
 @app.route("/")
 def index():
     return "Welcome to the Faculty Website Backend"
 
+# Register blueprints
 app.register_blueprint(about_bp, url_prefix='/about')
 app.register_blueprint(news_bp, url_prefix='/news')
 app.register_blueprint(contact_bp, url_prefix='/contact')
